@@ -310,17 +310,57 @@ Probability Assignment -III
 Let $X$ represent the difference between the number of heads and the number of
 tails obtained when a coin is tossed 6 times. What are possible values of $X$? \\
 \textbf{Solution:}\\
-Let, $H$ represent no of head and $T$ represent no of tails then $X$ can be
+Let, $H$ represent random variable representing the no of heads in 6 coin tosses, (PMF) of $H$ is given by
 \begin{align}
-	(H=0,T=6)\Rightarrow X=|0-6|=6\\
-	(H=1,T=5)\Rightarrow X=|1-5|=4\\
-	(H=2,T=4)\Rightarrow X=|2-4|=2\\
-	(H=3,T=3)\Rightarrow X=|3-3|=0\\
-	(H=4,T=2)\Rightarrow X=|4-2|=2\\
-	(H=5,T=1)\Rightarrow X=|5-1|=4\\
-	(H=6,T=1)\Rightarrow X=|6-0|=6
+	\pr{H=k}= ^nC_k\times \left(\frac{1}{2}\right)^k \times \left(\frac{1}{2}\right)^{6-k},0\le H \le 6
 \end{align}
-$\therefore$ $X$ is a random variable which can take the values 0,2,4 or 6
+Let, $H$ represent random variable representing the no of heads in 6 coin tosses, (PMF) of $H$ is given by
+\begin{align}
+	\pr{T=k}= ^nC_k\times \left(\frac{1}{2}\right)^k \times \left(\frac{1}{2}\right)^{6-k},0\le T \le 6
+\end{align}
+$X$ is random varible representing the difference between no of tails and heads (PMF) of X is
+\begin{align}
+	X=H-T,X&={-6,-4,-2,0,2,4,6}\\
+	H=k\Rightarrow T&=6-k \Rightarrow X=2k-6\\
+	       \pr{X=2k-6}&=\pr{H=k}=\pr{T=6-k}\\
+	       &=^nC_k\times \left(\frac{1}{2}\right)^6
+           \end{align}
+		   k=0 
+		   \begin{align}
+           &\pr{X=-6}=\left(\frac{1}{2}\right)^6=\frac{1}{64}
+		   \end{align}
+		   k=1
+		   \begin{align}
+           &\pr{X=-4}=6\times \left(\frac{1}{2}\right)^6=\frac{3}{32}
+		   \end{align}
+		   k=2
+		   \begin{align}
+           &\pr{X=-2}=15\times\left(\frac{1}{2}\right)^6=\frac{3}{16}
+		   \end{align}
+		   k=3
+		   \begin{align}
+           &\pr{X=0}=20\times\left(\frac{1}{2}\right)^6=\frac{5}{16}
+		   \end{align}
+		   k=4
+		   \begin{align}
+           &\pr{X=2}=15\times\left(\frac{1}{2}\right)^6=\frac{3}{16}
+		   \end{align}
+		   k=5
+		   \begin{align}
+           &\pr{X=4}=6\times \left(\frac{1}{2}\right)^6=\frac{3}{32}
+		   \end{align}
+		   k=6
+		   \begin{align}
+           &\pr{X=6}=\left(\frac{1}{2}\right)^6=\frac{1}{64}
+\end{align}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline
+	X & -6 & -4 & -2 & 0 & 2 & 4 & 6\\
+	\hline
+		\pr{X} & $\frac{1}{64}$ & $\frac{3}{32}$ & $\frac{3}{16}$ & $\frac{5}{16}$ & $\frac{3}{16}$  & $\frac{3}{32}$ & $\frac{1}{64}$\\
+    \hline
+\end{tabular}
+%$\therefore$ $X$ is a random variable which can take the values 0,2,4 or 6
 
 \end{document}
 
