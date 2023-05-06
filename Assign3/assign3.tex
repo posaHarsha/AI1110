@@ -309,81 +309,75 @@ Probability Assignment -III
 \textbf{Question:}
 Let $X$ represent the difference between the number of heads and the number of
 tails obtained when a coin is tossed 6 times. What are possible values of $X$? \\
-\textbf{Solution:}\\
-Let, $H$ represent random variable representing the no of heads in 6 coin tosses, (PMF) of $H$ is given by
-\begin{align}
-	\pr{H=k}= ^nC_k\times \left(\frac{1}{2}\right)^k \times \left(\frac{1}{2}\right)^{6-k},0\le H \le 6
-\end{align}
-Let, $H$ represent random variable representing the no of heads in 6 coin tosses, (PMF) of $H$ is given by
-\begin{align}
-	\pr{T=k}= ^nC_k\times \left(\frac{1}{2}\right)^k \times \left(\frac{1}{2}\right)^{6-k},0\le T \le 6
-\end{align}
-$X$ is random varible representing the difference between no of tails and heads (PMF) of X is
-\begin{align}
-	X=H-T,X&={-6,-4,-2,0,2,4,6}\\
-	H=k\Rightarrow T&=6-k \Rightarrow X=2k-6\\
-	       \pr{X=2k-6}&=\pr{H=k}=\pr{T=6-k}\\
-	       &=^nC_k\times \left(\frac{1}{2}\right)^6
-           \end{align}
-		   k=0 
-		   \begin{align}
-           &\pr{X=-6}=\left(\frac{1}{2}\right)^6=\frac{1}{64}
-		   \end{align}
-		   k=1
-		   \begin{align}
-           &\pr{X=-4}=6\times \left(\frac{1}{2}\right)^6=\frac{3}{32}
-		   \end{align}
-		   k=2
-		   \begin{align}
-           &\pr{X=-2}=15\times\left(\frac{1}{2}\right)^6=\frac{15}{64}
-		   \end{align}
-		   k=3
-		   \begin{align}
-           &\pr{X=0}=20\times\left(\frac{1}{2}\right)^6=\frac{5}{16}
-		   \end{align}
-		   k=4
-		   \begin{align}
-           &\pr{X=2}=15\times\left(\frac{1}{2}\right)^6=\frac{15}{64}
-		   \end{align}
-		   k=5
-		   \begin{align}
-           &\pr{X=4}=6\times \left(\frac{1}{2}\right)^6=\frac{3}{32}
-		   \end{align}
-		   k=6
-		   \begin{align}
-           &\pr{X=6}=\left(\frac{1}{2}\right)^6=\frac{1}{64}
-\end{align}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-	\hline
-	X & -6 & -4 & -2 & 0 & 2 & 4 & 6\\
-	\hline
-		\pr{X} & $\frac{1}{64}$ & $\frac{3}{32}$ & $\frac{15}{64}$ & $\frac{5}{16}$ & $\frac{15}{64}$  & $\frac{3}{32}$ & $\frac{1}{64}$\\
-    \hline
-\end{tabular}
-\begin{align}
-	F_X(x)=\pr{X\le x} \nonumber\\
-	F_X(-6)=\pr{X\le -6}&=\frac{1}{64}\\
-	F_X(-4)=\pr{X\le -4}&=\frac{1}{64} + \frac{3}{32}=\frac{7}{64}\\
-	F_X(-2)=\pr{X\le -2}&=\frac{1}{64} + \frac{3}{32}+\frac{15}{64}\\
-	                    &=\frac{11}{32}\\
-	F_X(0)=\pr{X\le 0}&=\frac{1}{64} + \frac{3}{32}+\frac{15}{64}+\frac{5}{16}\\
-	                    &=\frac{21}{32}\\
-	F_X(2)=\pr{X\le 2}&=\frac{1}{64} + \frac{3}{32}+\frac{30}{64}+\frac{5}{16}\\
-	                    &=\frac{57}{64}\\	
-	F_X(4)=\pr{X\le 4}&=\frac{1}{64} + \frac{6}{32}+\frac{30}{64}+\frac{5}{16}\\
-	                    &=\frac{63}{64}\\
-	F_X(6)=\pr{X\le 6}&=\frac{2}{64} + \frac{6}{32}+\frac{30}{64}+\frac{5}{16}\\
-	                    &=\frac{64}{64}=1															
-\end{align}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-	\hline
-	X & -6 & -4 & -2 & 0 & 2 & 4 & 6\\
-	\hline
-	$F_X(x)$ & $\frac{1}{64}$ & $\frac{7}{64}$ & $\frac{11}{32}$ & $\frac{21}{32}$ & $\frac{57}{64}$  & $\frac{63}{64}$ & 1\\
-    \hline
-\end{tabular}
-%$\therefore$ $X$ is a random variable which can take the values 0,2,4 or 6
 
-\end{document}
+ \textbf{Solution:}
+ \\
+ Let H be a random variable which represents the number of Heads obtained in 6 coin tosses.
+ \\And T be a random variable which represents the number of Tails obtained in 6 coin tosses.
+ \\Then,
+ \\ $H \in \{0,1,2,3,4,5,6\}$
+ \\Similarly,
+ \\ $T \in \{0,1,2,3,4,5,6\}$
+\begin{align}
+    H + T = 6\\
+    X = |H -T|\\
+    X = |H -(6-H)|\\
+    X = |2H -6|\\
+        X = 
+        \begin{cases}
+            6 & H \in \{0,6\} \\
+            4 & H \in \{1,5\}\\
+            2 & H \in \{2,4\}\\
+            0 & H \in \{3\}
+        \end{cases}
+    \end{align}
+Hence, The possible values of X are \{0,2,4,6\}
+\begin{align}
+        \pr{H=k} = ^6C_k \left(\frac{1}{2}\right)^6 , 0\leq k \leq 6\\
+    \end{align}
+\begin{align}
+        \pr{X=i} = 
+        \begin{cases}
+            \pr{H=3} & i=0\\
+            \pr{H=2}+\pr{H=4} & i=2\\
+            \pr{H=1}+\pr{H=5} & i=4\\
+            \pr{H=0}+\pr{H=6} & i=6
+        \end{cases}
+    \end{align}
+The distribution of X is
+\begin{align}
+        \pr{X=i} = 
+        \begin{cases}
+            ^6C_3\left(\frac{1}{2}\right)^6 & i=0\\
+            ^6C_2\left(\frac{1}{2}\right)^6 + ^6C_4\left(\frac{1}{2}\right)^6 & i=2\\
+            ^6C_1\left(\frac{1}{2}\right)^6 + ^6C_5\left(\frac{1}{2}\right)^6 & i=4\\
+            ^6C_0\left(\frac{1}{2}\right)^6 + ^6C_6\left(\frac{1}{2}\right)^6& i=6
+        \end{cases}
+    \end{align}
+The CDF of Random Variable X can be written as
+\begin{align}
+F_X(k)=\pr{X \leq k} =\sum_{i=0}^{k}\pr{X=i}
+    \end{align}
+Therefore,
+\begin{align}
+F_X(0)&=\pr{X=0}= ^6C_3\left(\frac{1}{2}\right)^6=\frac{5}{16}\\
+F_X(2)&=\sum_{i=0}^{2}\pr{X=i}= ^6C_3\left(\frac{1}{2}\right)^6 + ^6C_2\left(\frac{1}{2}\right)^6 +^6C_4\left(\frac{1}{2}\right)^6=\frac{25}{32}\\
+F_X(4)&=\sum_{i=0}^{4}\pr{X=i} \nonumber
+\\&=^6C_3\left(\frac{1}{2}\right)^6 + ^6C_2\left(\frac{1}{2}\right)^6 +^6C_4\left(\frac{1}{2}\right)^6 + ^6C_1\left(\frac{1}{2}\right)^6 + ^6C_5\left(\frac{1}{2}\right)^6 \nonumber\\
+&=\frac{31}{32}\\
+F_X(6)&=\sum_{i=0}^{6}\pr{X=i} \nonumber
+\\&=^6C_3\left(\frac{1}{2}\right)^6 + ^6C_2\left(\frac{1}{2}\right)^6 +^6C_4\left(\frac{1}{2}\right)^6 + ^6C_1\left(\frac{1}{2}\right)^6 + ^6C_5\left(\frac{1}{2}\right)^6\nonumber\\
+&+^6C_0\left(\frac{1}{2}\right)^6 + ^6C_6\left(\frac{1}{2}\right)^6 
+\\&=1
+    \end{align}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        X & 0 & 2 & 4 & 6\\
+        \hline
+        $F_X(x)$ & $\frac{5}{16}$ & $\frac{25}{32}$ & $\frac{3}{32}$ & 1 \\
+        \hline
+    \end{tabular}
+\end {document}
+
 
 
