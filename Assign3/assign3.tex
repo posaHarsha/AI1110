@@ -325,46 +325,34 @@ tails obtained when a coin is tossed 6 times. What are possible values of $X$? \
     X &= |2H -6|
 \end{align}
 \begin{align}
-    F_X(0)&=\pr{X\le0}=\pr{|2H-6|\le 0}\\
-               &=\pr{2H-6=0}=\pr{H=3}   \\
-               &=^6C_3\left(\frac{1}{2}\right)^6
-    \end{align}
+    F_X(k)&=\pr{X\le 0}=\pr{|2H-6|\le k}\\
+          &=\pr{2H-6\le k} \text{and} \pr{2H-6\ge -k}\\
+          &=\pr{H\le \frac{k+6}{2}} \text{and} \pr{H\ge \frac{6-k}{2}}\\
+          &=\pr{\frac{6-k}{2}\le H \le \frac{k+6}{2}}\\
+          &=F_H\left(\frac{6+k}{2}\right)-F_H\left(\frac{6-k}{2}-1\right)\\
+          &=F_H\left(\frac{6+k}{2}\right)-F_H\left(\frac{4-k}{2}\right)
+\end{align}
 \begin{align}
-    F_X(2)&=\pr{X\le2}=\pr{|2H-6|\le 2}\\
-    &=\pr{2H-6\le 2}  \text{and} \pr{2H-6\ge -2}\\
-    &=\pr{H\le 4}      \text{and}  \pr{H\ge 2}\\
-    &=\pr{2\le H\le 4}\\
-    &=\sum_{i=2}^{4} \pr{H=i}\\
+    F_X(0)&=F_H(3)-F_H(2)\\
+          &=^6C_3\left(\frac{1}{2}\right)^6
+\end{align}
+\begin{align}
+    F_X(2)&=F_H(4)-F_H(1)\\
     &=^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6+^6C_4\left(\frac{1}{2}\right)^6\\
     &=\frac{25}{32}
 \end{align}
 \begin{align}
-    F_X(4)&=\pr{X\le4}=\pr{|2H-6|\le 4}\\
-    &=\pr{2H-6\le 4}   \text{and}  \pr{2H-6\ge -4}\\
-    &=\pr{H\le 5}      \text{and}  \pr{H\ge 1}\\
-    &=\pr{1\le H\le 5}\\
-    &=\sum_{i=1}^{5} \pr{H=i}\\
+    F_X(4)&=F_H(5)-F_H(0)\\
     &=^6C_1\left(\frac{1}{2}\right)^6+^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6\\
     &+^6C_4\left(\frac{1}{2}\right)^6+^6C_5\left(\frac{1}{2}\right)^6\\
     &=\frac{31}{32}
 \end{align}
 \begin{align}
-    F_X(6)&=\pr{X\le6}=\pr{|2H-6|\le 6}\\
-    &=\pr{2H-6\le 6}   \text{and}  \pr{2H-6\ge -6}\\
-    &=\pr{H\le 6}      \text{and}  \pr{H\ge 0}\\
-    &=\pr{0\le H\le 6}\\
-    &=\sum_{i=0}^{6} \pr{H=i}\\
+    F_X(6)=&=F_H(6)\\
     &=^6C_0\left(\frac{1}{2}\right)^6+^6C_1\left(\frac{1}{2}\right)^6+^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6\nonumber\\
     &+^6C_4\left(\frac{1}{2}\right)^6+^6C_5\left(\frac{1}{2}\right)^6+^6C_6\left(\frac{1}{2}\right)^6\\
     &=\frac{64}{64} =1
 \end{align}
-    \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        X & 0 & 2 & 4 & 6\\
-        \hline
-        $F_X(x)$ & $\frac{5}{16}$ & $\frac{25}{32}$ & $\frac{31}{32}$ & 1 \\
-        \hline
-    \end{tabular}
 \end {document}
 
 
