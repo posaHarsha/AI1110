@@ -319,62 +319,50 @@ tails obtained when a coin is tossed 6 times. What are possible values of $X$? \
  \\Similarly,
  \\ $T \in \{0,1,2,3,4,5,6\}$
 \begin{align}
-    H + T = 6\\
-    X = |H -T|\\
-    X = |H -(6-H)|\\
-    X = |2H -6|\\
-        X = 
-        \begin{cases}
-            6 & H \in \{0,6\} \\
-            4 & H \in \{1,5\}\\
-            2 & H \in \{2,4\}\\
-            0 & H \in \{3\}
-        \end{cases}
-    \end{align}
-Hence, The possible values of X are \{0,2,4,6\}
+    H + T &= 6\\
+    X &= |H -T|\\
+    X &= |H -(6-H)|\\
+    X &= |2H -6|
+\end{align}
 \begin{align}
-        \pr{H=k} = ^6C_k \left(\frac{1}{2}\right)^6 , 0\leq k \leq 6\\
+    \pr{X\le0}&=\pr{|2H-6|\le 0}\\
+               &=\pr{2H-6=0}=\pr{H=3}   \\
+               &=^6C_3\left(\frac{1}{2}\right)^6
     \end{align}
 \begin{align}
-        \pr{X=i} = 
-        \begin{cases}
-            \pr{H=3} & i=0\\
-            \pr{H=2}+\pr{H=4} & i=2\\
-            \pr{H=1}+\pr{H=5} & i=4\\
-            \pr{H=0}+\pr{H=6} & i=6
-        \end{cases}
-    \end{align}
-The distribution of X is
+    \pr{X\le2}&=\pr{|2H-6|\le 2}\\
+    &=\pr{2H-6\le 2}  \text{and} \pr{2H-6\ge -2}\\
+    &=\pr{H\le 4}      \text{and}  \pr{H\ge 2}\\
+    &=\pr{2\le H\le 4}\\
+    &=\sum_{i=2}^{4} \pr{H=i}\\
+    &=^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6+^6C_4\left(\frac{1}{2}\right)^6\\
+    &=\frac{25}{32}
+\end{align}
 \begin{align}
-        \pr{X=i} = 
-        \begin{cases}
-            ^6C_3\left(\frac{1}{2}\right)^6 & i=0\\
-            ^6C_2\left(\frac{1}{2}\right)^6 + ^6C_4\left(\frac{1}{2}\right)^6 & i=2\\
-            ^6C_1\left(\frac{1}{2}\right)^6 + ^6C_5\left(\frac{1}{2}\right)^6 & i=4\\
-            ^6C_0\left(\frac{1}{2}\right)^6 + ^6C_6\left(\frac{1}{2}\right)^6& i=6
-        \end{cases}
-    \end{align}
-The CDF of Random Variable X can be written as
+    \pr{X\le4}&=\pr{|2H-6|\le 4}\\
+    &=\pr{2H-6\le 4}   \text{and}  \pr{2H-6\ge -4}\\
+    &=\pr{H\le 5}      \text{and}  \pr{H\ge 1}\\
+    &=\pr{1\le H\le 5}\\
+    &=\sum_{i=1}^{5} \pr{H=i}\\
+    &=^6C_1\left(\frac{1}{2}\right)^6+^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6\\
+    &+^6C_4\left(\frac{1}{2}\right)^6+^6C_5\left(\frac{1}{2}\right)^6\\
+    &=\frac{31}{32}
+\end{align}
 \begin{align}
-F_X(k)=\pr{X \leq k} =\sum_{i=0}^{k}\pr{X=i}
-    \end{align}
-Therefore,
-\begin{align}
-F_X(0)&=\pr{X=0}= ^6C_3\left(\frac{1}{2}\right)^6=\frac{5}{16}\\
-F_X(2)&=\sum_{i=0}^{2}\pr{X=i}= ^6C_3\left(\frac{1}{2}\right)^6 + ^6C_2\left(\frac{1}{2}\right)^6 +^6C_4\left(\frac{1}{2}\right)^6=\frac{25}{32}\\
-F_X(4)&=\sum_{i=0}^{4}\pr{X=i} \nonumber
-\\&=^6C_3\left(\frac{1}{2}\right)^6 + ^6C_2\left(\frac{1}{2}\right)^6 +^6C_4\left(\frac{1}{2}\right)^6 + ^6C_1\left(\frac{1}{2}\right)^6 + ^6C_5\left(\frac{1}{2}\right)^6 \nonumber\\
-&=\frac{31}{32}\\
-F_X(6)&=\sum_{i=0}^{6}\pr{X=i} \nonumber
-\\&=^6C_3\left(\frac{1}{2}\right)^6 + ^6C_2\left(\frac{1}{2}\right)^6 +^6C_4\left(\frac{1}{2}\right)^6 + ^6C_1\left(\frac{1}{2}\right)^6 + ^6C_5\left(\frac{1}{2}\right)^6\nonumber\\
-&+^6C_0\left(\frac{1}{2}\right)^6 + ^6C_6\left(\frac{1}{2}\right)^6 
-\\&=1
-    \end{align}
+    \pr{X\le6}&=\pr{|2H-6|\le 6}\\
+    &=\pr{2H-6\le 6}   \text{and}  \pr{2H-6\ge -6}\\
+    &=\pr{H\le 6}      \text{and}  \pr{H\ge 0}\\
+    &=\pr{0\le H\le 6}\\
+    &=\sum_{i=0}^{6} \pr{H=i}\\
+    &=^6C_0\left(\frac{1}{2}\right)^6+^6C_1\left(\frac{1}{2}\right)^6+^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6\nonumber\\
+    &+^6C_4\left(\frac{1}{2}\right)^6+^6C_5\left(\frac{1}{2}\right)^6+^6C_6\left(\frac{1}{2}\right)^6\\
+    &=\frac{64}{64} =1
+\end{align}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
         X & 0 & 2 & 4 & 6\\
         \hline
-        $F_X(x)$ & $\frac{5}{16}$ & $\frac{25}{32}$ & $\frac{3}{32}$ & 1 \\
+        $F_X(x)$ & $\frac{5}{16}$ & $\frac{25}{32}$ & $\frac{31}{32}$ & 1 \\
         \hline
     \end{tabular}
 \end {document}
