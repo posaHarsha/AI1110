@@ -325,34 +325,55 @@ tails obtained when a coin is tossed 6 times. What are possible values of $X$? \
     X &= |2H -6|
 \end{align}
 \begin{align}
-    F_X(k)&=\pr{X\le 0}=\pr{|2H-6|\le k}\\
+    F_H(k)&=\pr{H\le k}\\
+          &=\sum_{i=0}^k \pr{H=i}
+\end{align}
+\begin{align}
+    F_X(k)&=\pr{X\le k}=\pr{|2H-6|\le k}\\
           &=\pr{2H-6\le k} \text{and} \pr{2H-6\ge -k}\\
           &=\pr{H\le \frac{k+6}{2}} \text{and} \pr{H\ge \frac{6-k}{2}}\\
           &=\pr{\frac{6-k}{2}\le H \le \frac{k+6}{2}}\\
           &=F_H\left(\frac{6+k}{2}\right)-F_H\left(\frac{6-k}{2}-1\right)\\
-          &=F_H\left(\frac{6+k}{2}\right)-F_H\left(\frac{4-k}{2}\right)
+          &=F_H\left(\frac{6+k}{2}\right)-F_H\left(\frac{4-k}{2}\right)\\
+          &=\sum_{i=\frac{6-k}{2}}^{\frac{k+6}{2}} \pr{H=i}
 \end{align}
 \begin{align}
     F_X(0)&=F_H(3)-F_H(2)\\
+          &=\sum_{i=3}^3 \pr{H=i}\\
           &=^6C_3\left(\frac{1}{2}\right)^6
 \end{align}
 \begin{align}
     F_X(2)&=F_H(4)-F_H(1)\\
+    &=\sum_{i=2}^4 \pr{H=i}\\
     &=^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6+^6C_4\left(\frac{1}{2}\right)^6\\
     &=\frac{25}{32}
 \end{align}
 \begin{align}
     F_X(4)&=F_H(5)-F_H(0)\\
-    &=^6C_1\left(\frac{1}{2}\right)^6+^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6\\
+    &=\sum_{i=1}^5 \pr{H=i}\\
+    &=^6C_1\left(\frac{1}{2}\right)^6+^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6\nonumber\\
     &+^6C_4\left(\frac{1}{2}\right)^6+^6C_5\left(\frac{1}{2}\right)^6\\
     &=\frac{31}{32}
 \end{align}
 \begin{align}
-    F_X(6)=&=F_H(6)\\
+    F_X(6)&=F_H(6)\\
+    &=\sum_{i=0}^6 \pr{H=i}\\
     &=^6C_0\left(\frac{1}{2}\right)^6+^6C_1\left(\frac{1}{2}\right)^6+^6C_2\left(\frac{1}{2}\right)^6+^6C_3\left(\frac{1}{2}\right)^6\nonumber\\
     &+^6C_4\left(\frac{1}{2}\right)^6+^6C_5\left(\frac{1}{2}\right)^6+^6C_6\left(\frac{1}{2}\right)^6\\
     &=\frac{64}{64} =1
 \end{align}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.6\columnwidth]{fig2.png}
+    \caption{Stem plot for the distribution $F_H(k)$}
+    \label{fig:Plot}
+    \end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.6\columnwidth]{fig1.png}
+    \caption{Stem plot for the distribution $F_X(k)$}
+    \label{fig:Plot}
+    \end{figure}
 \end {document}
 
 
